@@ -18,15 +18,15 @@ $ npm install async-wait
 
 ## Usage
 
-First, load and initialize async while. By default, the global Promise object is used, but you can pass in a custom Promise class, too.
+First, load async while. By default, the global Promise object is used, but you can create a while generator with a custom Promise class, too.
 
 ```js
 // simple
-var asyncWhile = require("async-while")();
+var asyncWhile = require("async-while");
 
-// while Bluebird promises
+// while with Bluebird promises
 var Promise = require("bluebird");
-var asyncWhile = require("async-while")(Promise);
+var asyncWhile = require("async-while").generate(Promise);
 ```
 
 Now, generate a while function with `asyncWhile`. You'll need two functions: a synchronous condition and an action.

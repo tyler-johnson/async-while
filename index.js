@@ -1,7 +1,10 @@
-var NativePromise = Promise;
+var NativePromise;
 
-var generate =
-module.exports = function(Promise) {
+if (typeof Promise !== "undefined") {
+	NativePromise = Promise;
+}
+
+function generate(Promise) {
 	if (Promise == null) Promise = NativePromise;
 
 	return function(condition, action, ctx) {
@@ -16,6 +19,9 @@ module.exports = function(Promise) {
 		}
 	}
 }
+
+module.exports = generate();
+module.exports.generate = generate;
 
 module.exports.register = function(Promise) {
 	var asyncWhile = generate(Promise);
