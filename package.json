@@ -1,0 +1,18 @@
+{
+	"name": "async-while",
+	"description": "Asynchronous while loops using ES6 Promises.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Tyler Johnson <tyler@tylerjohnson.me>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tyler-johnson/async-while.git"
+	},
+	"license": "MIT",
+	"keywords": [
+		"promise",
+		"async",
+		"while",
+		"loop"
+	]
+}
