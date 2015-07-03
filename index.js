@@ -8,7 +8,7 @@ function generate(Promise) {
 	if (Promise == null) Promise = NativePromise;
 
 	return function(condition, action, ctx) {
-		return function(data) {
+		var whilst = function(data) {
 			try {
 				if (ctx == null) ctx = this;
 				if (!condition.call(ctx, data)) return Promise.resolve(data);
@@ -17,6 +17,8 @@ function generate(Promise) {
 				return Promise.reject(e);
 			}
 		}
+
+		return whilst;
 	}
 }
 
