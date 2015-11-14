@@ -1,8 +1,4 @@
-var NativePromise;
-
-if (typeof Promise !== "undefined") {
-	NativePromise = Promise;
-}
+var NativePromise = require("any-promise");
 
 function generate(Promise) {
 	if (Promise == null) Promise = NativePromise;
@@ -16,10 +12,10 @@ function generate(Promise) {
 			} catch(e) {
 				return Promise.reject(e);
 			}
-		}
+		};
 
 		return whilst;
-	}
+	};
 }
 
 module.exports = generate();
@@ -30,11 +26,11 @@ module.exports.register = function(Promise) {
 
 	Promise.while = function() {
 		return asyncWhile.apply(this, arguments)();
-	}
+	};
 
 	Promise.prototype.while = function() {
 		return this.then(asyncWhile.apply(this, arguments));
-	}
+	};
 
 	return asyncWhile;
-}
+};

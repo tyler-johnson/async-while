@@ -13,7 +13,7 @@ Download a UMD bundle from the [releases page](). The variable `asyncWhile` will
 If using Browserify or Node.js, you can install via NPM.
 
 ```sh
-$ npm install async-wait
+$ npm install async-while
 ```
 
 ## Usage
